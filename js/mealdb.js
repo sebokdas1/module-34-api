@@ -5,7 +5,7 @@ const searchButton = () => {
     const searchResult = document.getElementById('search-results');
     if (fieldValue == '') {
         searchResult.innerHTML = `
-<p class="text-danger mx-auto fs-1">please search something</p>
+       <p class="text-danger mx-auto fs-1">please search something</p>
 `;
     } else {
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${fieldValue}`
@@ -15,6 +15,7 @@ const searchButton = () => {
     }
 
 };
+
 const searchInputResults = result => {
     const searchResult = document.getElementById('search-results');
     //clear previous result
@@ -53,7 +54,7 @@ const displayMealInfo = info => {
                 <div class="card-body">
                     <h5 class="card-title">${info.strMeal}</h5>
                     <p class="card-text">${info.strInstructions.slice(0, 150)}</p>
-                    <a href="${info.strYoutube}" class="btn btn-primary">watch video</a>
+                    <a target="_blank" href="${info.strYoutube}" class="btn btn-primary">watch video</a>
                 </div>
     `;
     singleMeal.appendChild(div)
